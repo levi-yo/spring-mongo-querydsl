@@ -1,6 +1,7 @@
 buildscript {
     ext {
         queryDslVersion = '4.3.0'
+        flapdoodleVersion = '2.2.0'
     }
     repositories {
         maven {
@@ -42,6 +43,8 @@ dependencies {
             "com.querydsl:querydsl-apt:${queryDslVersion}",
             'org.projectlombok:lombok'
     )
+
+    testImplementation "de.flapdoodle.embed:de.flapdoodle.embed.mongo:${flapdoodleVersion}"
 
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
